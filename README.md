@@ -32,36 +32,66 @@ Given this data the following structure is used to aggregate data:
 
 ```python
 dic = {
-                    'row_id': f"{stock_id}-{time_id}", 
-                    'wap1_mean': book_slice['wap1'].mean(),
-                    'wap1_std':book_slice['wap1'].std(),
-                    'wap2_mean': book_slice['wap2'].mean(),
-                    'wap2_std':book_slice['wap2'].std(),
-                    'h_spread_l1': book['h_spread_l1'].max(),
-                    'h_spread_l2': book['h_spread_l2'].max(),
-                    'v_spread_b': book['v_spread_b'].max(),
-                    'v_spread_a': book['v_spread_a'].max(),
-                    'log_return1_mean': book_slice['log_return1'].mean(),
-                    'log_return1_std':book_slice['log_return1'].std(),
-                    'log_return2_mean': book_slice['log_return2'].mean(),
-                    'log_return2_std':book_slice['log_return2'].std(),
-                    'bas_mean': book_slice['bas'].mean(),
-                    'bas_std': book_slice['bas'].std(),
-                    'ask_size_mean': book_slice['ask_size1'].mean(),
-                    'ask_size_std': book_slice['ask_size1'].std(),
-                    'ask_price_mean': book_slice['ask_price1'].mean(),
-                    'ask_price_std': book_slice['ask_price1'].std(),
-                    'bid_size_mean': book_slice['bid_size1'].mean(),
-                    'bid_size_std': book_slice['bid_size1'].std(),
-                    'bid_price_mean': book_slice['bid_price1'].mean(),
-                    'bid_price_std': book_slice['bid_price1'].std(),
-                    'actual_price_mean': trade['price'].mean(),
-                    'actual_price_std': trade['price'].std(),
-                    'size_mean': trade['size'].mean(),
-                    'size_std': trade['size'].std(),
-                    'order_count_mean': trade['order_count'].mean(),
-                    'order_count_std': trade['order_count'].std(),
-                }
+    'row_id': f"{stock_id}-{time_id}",
+    # Weighted Average Price metrics
+    'wap1_mean': book_slice['wap1'].mean(),
+    'wap1_std':book_slice['wap1'].std(),
+    'wap1_max':book_slice['wap1'].max(),
+    # Weighted Average Price metrics            
+    'wap2_mean': book_slice['wap2'].mean(),
+    'wap2_std':book_slice['wap2'].std(),
+    'wap2_max':book_slice['wap2'].max(),
+
+    'h_spread_l1_mean': book['h_spread_l1'].mean(),
+    'h_spread_l1_std': book['h_spread_l1'].std(),
+    'h_spread_l1_std': book['h_spread_l1'].max(),
+                    
+    'h_spread_l2_mean': book['h_spread_l2'].mean(),
+    'h_spread_l2_std': book['h_spread_l2'].std(),
+    'h_spread_l2_max': book['h_spread_l2'].max(),
+                    
+    'v_spread_b_mean': book['v_spread_b'].mean(),
+    'v_spread_b_std': book['v_spread_b'].std(),
+    'v_spread_b_max': book['v_spread_b'].max(),
+                    
+    'v_spread_a_mean': book['v_spread_a'].mean(),
+    'v_spread_a_std': book['v_spread_a'].std(),
+    'v_spread_a_max': book['v_spread_a'].max(),
+                    
+    'log_return1_mean': book_slice['log_return1'].mean(),
+    'log_return1_std':book_slice['log_return1'].std(),
+    'log_return1_max':book_slice['log_return1'].max(),
+                    
+    'log_return2_mean': book_slice['log_return2'].mean(),
+    'log_return2_std':book_slice['log_return2'].std(),
+    'log_return2_max':book_slice['log_return2'].max(),
+                    
+    'bas_mean': book_slice['bas'].mean(),
+    'bas_std': book_slice['bas'].std(),
+    'bas_max': book_slice['bas'].max(),
+                    
+    'ask_size_mean': book_slice['ask_size1'].mean(),
+    'ask_size_std': book_slice['ask_size1'].std(),
+                    
+    'ask_price_mean': book_slice['ask_price1'].mean(),
+    'ask_price_std': book_slice['ask_price1'].std(),
+                    
+    'bid_size_mean': book_slice['bid_size1'].mean(),
+    'bid_size_std': book_slice['bid_size1'].std(),
+                    
+    'bid_price_mean': book_slice['bid_price1'].mean(),
+    'bid_price_std': book_slice['bid_price1'].std(),
+                    
+    'actual_price_mean': trade['price'].mean(),
+    'actual_price_std': trade['price'].std(),
+    'actual_price_max': trade['price'].max(),
+                    
+    'size_mean': trade['size'].mean(),
+    'size_std': trade['size'].std(),
+                    
+    'order_count_mean': trade['order_count'].mean(),
+    'order_count_std': trade['order_count'].std(),
+}
 ```
 
 WAP stands for Weighted Average Price which is calculated using 
