@@ -109,5 +109,5 @@ class DataManager:
     def get_processed(self):
         """ Returns the processed the data. """
         self._traverse_book()
-#         print(self.measures_list)
+        
         return pd.DataFrame(self.measures_list)
